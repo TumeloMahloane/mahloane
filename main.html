@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine 💖</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+
+      .buttons {
+        position: relative;
+        width: 300px;
+        height: 150px;
+      }
+
+      button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      #yesBtn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      #noBtn {
+        background-color: #dc3545;
+        color: white;
+        position: absolute;
+        left: 150px;
+        top: 0;
+      }
+
+      #result {
+        margin-top: 30px;
+        font-size: 2rem;
+        color: #fff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Yakha, would you be my Valentine? 💕</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💘</button>
+      <button id="noBtn">No 🙈</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const result = document.getElementById("result");
+
+      noBtn.addEventListener("mouseover", () => {
+        const container = document.querySelector(".buttons");
+        const maxX = container.clientWidth - noBtn.offsetWidth;
+        const maxY = container.clientHeight - noBtn.offsetHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+      });
+
+      yesBtn.addEventListener("click", () => {
+        result.textContent = "yaaaaaaayyyyyy see you on the 14th! 💖🥰";
+      });
+    </script>
+  </body>
+</html>
